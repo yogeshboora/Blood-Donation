@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body background="./qq.png">
+    <div id="container">
+      <form
+        action="myserver.php"
+        method="post"
+        name="myform"
+        onsubmit="return validate()"
+      >
+        <a href="./index.html">
+          <img src="./download.jpg" />
+        </a>
+        <div class="border-box">
+          <h2>Login</h2>
+
+          UserName :
+          <input
+            type="text"
+            name="user"
+            placeholder="UserName"
+            id="u_name"
+          /><br />
+
+          Password :
+          <input
+            type="password"
+            name="paswd"
+            placeholder="Password"
+            id="passwd"
+          /><br />
+
+          <button type="submit" value="Login">Login</button>
+          <a href="./index.html"></a><button>Cancel</button></a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validate() {
+        var UserName = document.myform.user.value;
+        var Password = document.myform.paswd.value;
+        if (UserName == null || UserName == "") {
+          alert("Username can't be empty");
+          return false;
+        } else if (Password.length < 6) {
+          alert("password must be of atleast 6 digits");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

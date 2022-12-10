@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="./register.css" />
+  </head>
+  <body background="./qq.png">
+  
+    <a href="./index.html">
+      <img src="./download.jpg" />
+    </a>
+    <form
+      name="myform"
+      action="myserver.php"
+      method="post"
+      onsubmit="return validate()"
+    >
+      <h2>Registration</h2>
+      First Name
+      <input type="text" name="fname" placeholder="FirstName" /><br />
+
+      Last Name
+      <input type="text" name="lname" placeholder="LastName" /><br />
+
+      Phone No
+      <input type="text" name="pno" placeholder="10 characters" /><br />
+
+      User ID
+      <input type="text" name="uid" placeholder="Email ID or UserName" /><br />
+
+      Password
+      <input type="password" name="passwd" placeholder="8 characters" /><br />
+
+      Repassword
+      <input type="password" name="repss" placeholder="Repassword" /><br />
+
+      <a href="login.html">
+        <button type="button">Login</button>
+      </a>
+      <button type="submit" value="submit">Register</button>
+    </form>
+
+    <script>
+      function validate() {
+        var FirstName = document.myform.fname.value;
+        var LastName = document.myform.lname.value;
+        var Phone = document.myform.pno.value;
+        var Userid = document.myform.uid.value;
+        var Password = document.myform.passwd.value;
+        var Repassword = document.myform.repass.value;
+
+        if (FirstName == null || FirstName == ""){
+          alert("First name can't be blank");
+          return false;
+        } else if (LastName == null || LastName == "") {
+          alert("Last name can't be blank");
+          return false;
+        } else if (Phone.length < 10) {
+          alert("Invalid phone no");
+          return false;
+        } else if (Userid == null || Userid == "") {
+          alert("User id can't be blank");
+          return false;
+        } else if (Password.length < 6) {
+          alert("password must beof atleast six digits");
+          return false;
+        } else if (Password != Repassword) {
+          alert("Password dosen't match");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+
